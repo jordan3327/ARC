@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto evita que los paddings rompan el ancho de tus cubos */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente más limpia */
+}
+
+html {
+    scroll-behavior: smooth; /* Para que al navegar el scroll no sea brusco */
+}
+
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
+:root {
+  --green: #FF1536;         /* Rojo AR Community */
+  --red: #ff4c4c;
+  --black: #0d0d0d;
+  --white: #ffffff;
+  --gray: #1c1c1c;
+  --highlight: rgba(255, 255, 255, 0.3);
+  --title-gradient: linear-gradient(180deg, #ffffff, #ffffff);
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- ELEMENTOS DE FONDO Y HEADER --- */
+#candles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.9), rgba(13,13,13,0));
+}
+
+header h1 { 
+  font-family: 'Anton', sans-serif;
+  font-size: 5rem; 
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 8px; 
+  margin-right: -8px; 
+  background: var(--title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+  line-height: 1.1;
+}
+
+header p { 
+  font-size: 1.2rem; 
+  color: #ccc; 
+  max-width: 600px; 
+  margin: 0 auto 30px; 
+}
+
+/* --- NUEVO BOTÓN DISCORD PREMIUM (UIVERSE ADAPTADO) --- */
+.discord-card-btn {
+  position: relative;
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 21, 54, 0.3);
+  background: linear-gradient(135deg, rgba(255, 21, 54, 0.15) 0%, rgba(13, 13, 13, 0.9) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 0 auto;
+  display: block;
+}
+
+.discord-card-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 21, 54, 0.6);
+  box-shadow: 0 20px 40px rgba(255, 21, 54, 0.25);
+}
+
+.discord-card-btn:active {
+  transform: scale(0.95);
+}
+
+.shine-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+}
+
+.discord-card-btn:hover .shine-sweep {
+  transform: translateX(100%);
+}
+
+.btn-inner-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.discord-svg-main {
+  width: 32px;
+  height: 32px;
+  fill: var(--green);
+  transition: all 0.3s ease;
+}
+
+.discord-card-btn:hover .discord-svg-main {
+  transform: scale(1.1);
+  fill: #ffffff;
+}
+
+.discord-texts {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.discord-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.discord-subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+/* --- SECCIÓN MENTORÍAS --- */
+.section { 
+  padding: 60px 20px; 
+  max-width: 1200px; 
+  margin: auto; 
+}
+
+.section h2 { 
+  text-align: center; 
+  color: var(--green); 
+  font-size: 2rem; 
+  margin-bottom: 40px; 
+}
+
+.offers-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.offer-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px 25px;
+  border-radius: 15px; 
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.offer-card:hover { 
+  transform: translateY(-10px); 
+  border-color: rgba(255, 21, 54, 0.4) !important; 
+}
+
+.offer-card h3 { 
+  color: var(--green); 
+  font-size: 1.6rem; 
+  margin-bottom: 20px; 
+  text-align: center; 
+}
+
+.offer-card ul { 
+  list-style: none; 
+  padding: 0; 
+  margin-bottom: 30px; 
+}
+
+.offer-card ul li { 
+  margin-bottom: 12px; 
+  padding-left: 35px; 
+  position: relative; 
+  font-size: 0.95rem; 
+}
+
+.offer-card ul li::before { 
+  content: "✔"; 
+  position: absolute; 
+  left: 5px; 
+  color: var(--green); 
+  font-weight: bold; 
+}
+
+/* --- BOTÓN PAY-BTN (CENTRADO) --- */
+.pay-btn {
+  position: relative;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: var(--green);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 12px;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.btn-text { 
+  font-weight: 700;
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+.icon-container {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-btn:hover {
+  transform: translateY(-3px);
+  background: white;
+  box-shadow: 0 10px 20px rgba(255, 21, 54, 0.3);
+}
+
+.pay-btn .icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: color 0.3s;
+}
+
+.pay-btn:hover .icon { color: var(--green); }
+.default-icon { opacity: 1; visibility: visible; }
+
+.pay-btn:hover .wallet-icon { opacity: 0; visibility: hidden; }
+.pay-btn:hover .card-icon { animation: iconRotate 2.5s infinite; }
+.pay-btn:hover .payment-icon { animation: iconRotate 2.5s infinite 0.5s; }
+.pay-btn:hover .dollar-icon { animation: iconRotate 2.5s infinite 1s; }
+.pay-btn:hover .check-icon { animation: iconRotate 2.5s infinite 1.5s; }
+
+@keyframes iconRotate {
+  0% { opacity: 0; transform: translateY(10px) scale(0.5); }
+  5%, 15% { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+  20% { opacity: 0; transform: translateY(-10px) scale(0.5); }
+  100% { opacity: 0; }
+}
+
+/* --- TESTIMONIOS --- */
+.testimonials { margin-top: 60px; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.testimonial { background-color: var(--gray); padding: 25px; border-radius: 10px; border-left: 5px solid var(--green); }
+.testimonial p { font-style: italic; color: #ddd; }
+.testimonial span { display: block; margin-top: 15px; color: #999; font-weight: bold; }
+
+/* --- SECCIÓN SOCIAL (UIVERSE ADAPTADA) --- */
+/* --- SECCIÓN SOCIAL (CORRECCIÓN DE VISIBILIDAD DE ICONOS) --- */
+.social-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 60px 0;
+}
+
+.card {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  gap: 15px;
+}
+
+/* --- SECCIÓN SOCIAL (CUBOS CENTRADOS Y VISIBLES) --- */
+.social-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 60px 0;
+}
+
+.card {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  gap: 15px;
+}
+
+.socialContainer {
+  width: 48px; 
+  height: 48px;
+  border-radius: 10px;
+  background-color: #1c1c1c; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+/* FORZAR VISIBILIDAD DE ICONOS */
+.socialSvg {
+  width: 20px;   /* Tamaño equilibrado */
+  height: 20px;
+  display: block;
+}
+
+/* TikTok necesita un SVG un poco más grande por su forma */
+.tiktokSvg { width: 24px; height: 24px; }
+
+/* RELLENO BLANCO OBLIGATORIO */
+.socialSvg path, .socialSvg g, .socialSvg circle {
+  fill: #ffffff !important; 
+}
+
+/* COLORES EN HOVER */
+.containerFive:hover { background-color: #FF0000; } /* YouTube Rojo */
+.containerOne:hover { background-color: #d62976; }   /* Instagram Rosa */
+.containerTwo:hover { background-color: #000000; }   /* TikTok Negro */
+.containerFour:hover { background-color: #25d366; }  /* WhatsApp Verde */
+
+.socialContainer:active { transform: scale(0.9); }
+
+/* Animación slide-in al pasar el mouse */
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% { transform: translateY(-30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+  .card { gap: 10px; }
+  .socialContainer { width: 42px; height: 42px; }
+  .socialSvg { width: 18px; }
+}
+
+/* --- CALLOUT --- */
+.callout { 
+  text-align: center; 
+  margin: 60px auto; 
+  padding: 0 20px; 
+  width: 100%;
+  max-width: 900px;
+}
+
+.callout span { 
+  color: var(--green); 
+  font-size: clamp(1.1rem, 4vw, 1.8rem); 
+  font-weight: 700; 
+  display: inline-block;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+footer { 
+  text-align: center; 
+  padding: 40px; 
+  background-color: #101010; 
+  color: #777; 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) { 
+  .offers-row { grid-template-columns: 1fr; width: 95%; }
+  header h1 { font-size: 3rem; letter-spacing: 4px; }
+}
