@@ -46,3 +46,57 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('touchstart', () => playEffect('hover'), {passive: true});
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const button = document.getElementById("accept-cookies");
+
+    // Si el usuario no ha aceptado antes, mostramos el aviso
+    if (!localStorage.getItem("cookiesAceptadas")) {
+        setTimeout(() => {
+            banner.classList.add("active");
+        }, 2000); // Aparece 2 segundos después de cargar
+    }
+
+    button.addEventListener("click", () => {
+        banner.classList.remove("active");
+        localStorage.setItem("cookiesAceptadas", "true");
+    });
+});
+
+/* --- Lógica del Cartel de Cookies --- */
+document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const button = document.getElementById("accept-cookies");
+
+    // Si el usuario NO ha aceptado las cookies antes
+    if (!localStorage.getItem("cookiesAceptadas")) {
+        // Esperamos 2 segundos para que no interrumpa la carga inicial
+        setTimeout(() => {
+            if (banner) {
+                banner.classList.add("active");
+            }
+        }, 2000);
+    }
+
+    // Al hacer clic en el botón Accept
+    if (button) {
+        button.addEventListener("click", () => {
+            banner.classList.remove("active");
+            // Guardamos la decisión para que no vuelva a salir
+            localStorage.setItem("cookiesAceptadas", "true");
+        });
+    }
+});
+
+// Ejemplo de cómo usar la preferencia guardada:
+function reproducirSonidoTrade() {
+    const quiereSonido = localStorage.getItem("pref_vfx"); // Recordamos lo que eligió en cookies.html
+
+    if (quiereSonido === "true") {
+        // Aquí va tu código para reproducir el sonido
+        audio.play();
+    } else {
+        console.log("El usuario desactivó los sonidos desde el panel de cookies.");
+    }
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies | AR COMMUNITY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #0f0f0f;
+            --card: #1a1a1a;
+            --text: #e0e0e0;
+            --text-dim: #b3b3b3;
+        }
+
+        body { 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Poppins', sans-serif; 
+            padding: 40px 20px; 
+            line-height: 1.8; 
+            margin: 0;
+        }
+
+        .container { 
+            max-width: 850px; 
+            margin: auto; 
+            background: var(--card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        h1 { 
+            color: var(--primary); 
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        h2 { 
+            color: #fff; 
+            margin-top: 35px;
+            font-size: 1.4rem; 
+        }
+
+        p { color: var(--text-dim); margin-bottom: 20px; }
+
+        .highlight { color: var(--primary); font-weight: 600; }
+
+        /* Estilo de la Tabla */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td { 
+            padding: 18px; 
+            text-align: left; 
+            border-bottom: 1px solid #333; 
+        }
+
+        th { background: #2a2a2a; color: var(--primary); font-size: 0.9rem; text-transform: uppercase; }
+
+        /* Panel de Preferencias */
+        .pref-panel { 
+            background: #222; 
+            padding: 30px; 
+            border-radius: 15px; 
+            border: 1px solid var(--primary);
+            margin: 30px 0;
+        }
+
+        .pref-option { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 20px; 
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .pref-option:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .pref-info h4 { margin: 0; color: #fff; }
+        .pref-info p { margin: 5px 0 0; font-size: 0.85rem; }
+
+        /* Checkbox Estilizado */
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .btn-save { 
+            width: 100%; 
+            padding: 15px; 
+            background: var(--primary); 
+            color: #000; 
+            border: none; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-save:hover { 
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .back-link { 
+            display: inline-block; 
+            margin-top: 25px; 
+            color: var(--text-dim); 
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { color: var(--primary); }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Política de Cookies</h1>
+        <p>En <span class="highlight">AR COMMUNITY</span> utilizamos cookies propias y de terceros para asegurar que tu experiencia en nuestra academia de trading sea fluida, segura y personalizada.</p>
+
+        <h2>1. ¿Qué información recogemos?</h2>
+        <p>Las cookies nos permiten reconocer tu dispositivo y recordar tus preferencias de navegación, volumen de audio y estado de sesión sin necesidad de pedirte los datos constantemente.</p>
+
+        <h2>2. Detalle de Cookies</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Técnicas</strong></td>
+                    <td>Permiten la navegación y el uso de las diferentes opciones o servicios que existen en la web.</td>
+                </tr>
+                <tr>
+                    <td><strong>Personalización</strong></td>
+                    <td>Permiten recordar información para que accedas al servicio con determinadas características (idioma, sonidos).</td>
+                </tr>
+                <tr>
+                    <td><strong>Análisis</strong></td>
+                    <td>Nos ayudan a medir cuántas personas entran a la academia para mejorar el servidor.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="gestion">3. Centro de Preferencias</h2>
+        <p>Aquí puedes personalizar qué cookies permites que instalemos en tu navegador:</p>
+
+        <div class="pref-panel">
+            <div class="pref-option">
+                <div class="pref-info">
+                    <h4>Cookies Obligatorias</h4>
+                    <p>Necesarias para el funcionamiento del sitio y seguridad.</p>
+                </div>
+                <span style="color: var(--primary); font-size: 0.8rem; font-weight: bold;">SIEMPRE ACTIVAS</span>
+            </div>
+
+            <div class="pref-option">
+                <div class="pref-info">
+                    <h4>Experiencia y Sonido</h4>
+                    <p>Permite recordar tus ajustes de volumen y efectos visuales.</p>
+                </div>
+                <input type="checkbox" id="pref-vfx" checked>
+            </div>
+
+            <div class="pref-option">
+                <div class="pref-info">
+                    <h4>Métricas de Academia</h4>
+                    <p>Nos ayuda a mejorar el rendimiento de las velas y carga de datos.</p>
+                </div>
+                <input type="checkbox" id="pref-stats" checked>
+            </div>
+
+            <button class="btn-save" onclick="guardarConfig()">Guardar Configuración</button>
+        </div>
+
+        <p style="font-size: 0.8rem;">Al hacer clic en "Guardar Configuración", se aplicarán tus preferencias y serás redirigido a la página principal.</p>
+        
+        <a href="../index.html" class="back-link">← Volver al sitio principal</a>
+    </div>
+
+    <script>
+        function guardarConfig() {
+            // Guardamos el consentimiento en el LocalStorage
+            localStorage.setItem("cookiesAceptadas", "true");
+            
+            // Guardamos preferencias específicas
+            const vfx = document.getElementById('pref-vfx').checked;
+            const stats = document.getElementById('pref-stats').checked;
+            
+            localStorage.setItem("pref_vfx", vfx);
+            localStorage.setItem("pref_stats", stats);
+
+            // Feedback visual y redirección
+            alert("Tus preferencias han sido actualizadas.");
+            window.location.href = "../index.html";
+        }
+    </script>
+
+</body>
+</html>

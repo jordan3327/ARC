@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById('candles');
 const ctx = canvas.getContext('2d');
 
@@ -24,9 +25,36 @@ for(let i=0;i<numCandles;i++){
     wickTop: Math.random() * 30,
     wickBottom: Math.random() * 30,
     speed: Math.random() * .8 + 0.5,
-    color: color
+    color: color,
+    highlight: false,
+    highlightTimer: 0
   });
 }
+
+canvas.addEventListener('mousemove', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  candles.forEach(c => {
+    if(mx >= c.x && mx <= c.x + c.width && my >= c.y && my <= c.y + c.bodyHeight) {
+      c.highlight = true;
+      c.highlightTimer = 12;
+    }
+  });
+});
+
+canvas.addEventListener('click', e => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  candles.forEach(c => {
+    if(mx >= c.x && mx <= c.x + c.width && my >= c.y && my <= c.y + c.bodyHeight) {
+      c.highlight = true;
+      c.highlightTimer = 24;
+      c.color = '#ffe202'; // Destello dorado al click
+    }
+  });
+});
 
 function animate(){
   ctx.clearRect(0,0,W,H);
@@ -42,6 +70,13 @@ function animate(){
     }
     ctx.globalAlpha = opacity;
 
+    // Destello visual si está resaltado
+    if(c.highlight && c.highlightTimer > 0) {
+      ctx.save();
+      ctx.shadowColor = c.color === '#ffe202' ? '#ffe202' : '#fff';
+      ctx.shadowBlur = 18;
+    }
+
     ctx.strokeStyle = c.color;
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -49,8 +84,19 @@ function animate(){
     ctx.lineTo(c.x + c.width/2, c.y + c.bodyHeight + c.wickBottom);
     ctx.stroke();
 
-    ctx.fillStyle = c.color === '#00ff88' ? '#fcf2e6' : '#fcf2e7';
+    ctx.fillStyle = c.color === '#00ff88' ? 'rgba(0,255,136,0.6)' : (c.color === '#ffe202' ? 'rgba(255,226,2,0.7)' : 'rgba(255,76,76,0.6)');
     ctx.fillRect(c.x, c.y, c.width, c.bodyHeight);
+
+    if(c.highlight && c.highlightTimer > 0) {
+      ctx.restore();
+      c.highlightTimer--;
+      if(c.highlightTimer === 0) {
+        c.highlight = false;
+        if(c.color === '#ffe202') {
+          c.color = Math.random() > 0.5 ? '#00ff88' : '#ff4c4c';
+        }
+      }
+    }
 
     if(c.color === '#00ff88'){
       c.y -= c.speed;
@@ -78,33 +124,3 @@ function animate(){
 }
 
 animate();
-
-const mouse = { x: undefined, y: undefined };
-
-// Detectar Mouse o Toque en Tablet
-window.addEventListener('mousemove', (e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-});
-
-window.addEventListener('touchstart', (e) => {
-    mouse.x = e.touches[0].clientX;
-    mouse.y = e.touches[0].clientY;
-    // Aquí podrías disparar el sonido de "Select"
-    if(typeof playSound === "function") playSound('select');
-});
-
-// En el loop de animate(), dentro del candles.forEach, añade esto:
-function checkHover(c) {
-    const dx = mouse.x - c.x;
-    const dy = mouse.y - c.y;
-    const distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance < 50) { // Radio de cercanía
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = c.color;
-        ctx.globalAlpha = 0.8; // Se vuelve más sólida al tocarla
-    } else {
-        ctx.shadowBlur = 0;
-    }
-}

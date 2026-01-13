@@ -2,8 +2,6 @@
 
 Bienvenido al repositorio oficial de **Ar Academi**. Este proyecto representa una experiencia web de alto nivel, diseñada con un enfoque minimalista, interactivo y optimizado para el despliegue profesional.
 
-## 👤 Autor
-* **YNG Brany** - *Lead Developer & Visionary*
 
 ## 🌟 Características Principales
 * **Arquitectura Profesional:** Organización de directorios basada en estándares de la industria.
@@ -23,3 +21,6 @@ LLS/
 ├── CNAME               # Configuración de dominio personalizado
 ├── robots.txt          # Instrucciones para motores de búsqueda (SEO)
 └── README.md           # Documentación técnica del proyecto
+
+👤 Autor
+© 2026 YNG Brany | Ar Academi. Todos los derechos reservados.

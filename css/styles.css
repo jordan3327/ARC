@@ -1,3 +1,61 @@
+/* --- Logo de fondo tipo marca de agua --- */
+.background-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.background-logo::before {
+  content: '';
+  display: block;
+  width: 600px;
+  height: 600px;
+  max-width: 95vw;
+  max-height: 95vh;
+  background: url('../assets/logo/logo.png') center center no-repeat;
+  background-size: contain;
+  opacity: 0.18;
+  filter: blur(0.2px) grayscale(0.05) drop-shadow(0 8px 32px #0003);
+  position: relative;
+}
+/* --- Splash Logo Overlay --- */
+.splash-overlay {
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(.4,1,.6,1);
+  opacity: 1;
+}
+.splash-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash-logo {
+  width: 160px;
+  height: 160px;
+  max-width: 60vw;
+  max-height: 60vh;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 32px #000a);
+  animation: splash-pop 1.2s cubic-bezier(.4,1,.6,1);
+}
+@keyframes splash-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
 @font-face {
   font-family: 'Mustica Pro SemiBold';
   src: url('../assets/fonts/MusticaPro-SemiBold.otf') format('opentype');
@@ -13,7 +71,38 @@
   border-radius: 20px;
   transition: all .3s;
 }
-
+/* --- Splash Logo Overlay --- */
+.splash-overlay {
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(.4,1,.6,1);
+  opacity: 1;
+}
+.splash-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash-logo {
+  width: 160px;
+  height: 160px;
+  max-width: 60vw;
+  max-height: 60vh;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 32px #000a);
+  animation: splash-pop 1.2s cubic-bezier(.4,1,.6,1);
+}
+@keyframes splash-pop {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
 .card2 {
   width: 190px;
   height: 254px;
@@ -321,7 +410,13 @@ header p {
 .discord-subtitle { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
 
 .section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-.section h2 { text-align: center; color: var(--green); font-size: 2rem; margin-bottom: 40px; }
+.section h2 {
+  text-align: center;
+  color: var(--green);
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.38), 0 1px 0 #fff2;
+}
 
 .offers-row {
   display: grid;
@@ -446,8 +541,26 @@ header p {
 
 .socialContainer:active { transform: scale(0.9); }
 
-.callout { text-align: center; margin: 60px auto; padding: 0 20px; width: 100%; max-width: 900px; }
-.callout span { color: var(--green); font-size: clamp(1.1rem, 4vw, 1.8rem); font-weight: 700; text-transform: uppercase; }
+.callout {
+  text-align: center;
+  margin: 60px auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
+
+.callout span {
+  color: var(--green);
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  /* Eliminar cualquier transparencia */
+  opacity: 1;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.38), 0 1px 0 #fff2;
+}
+
 
 footer { text-align: center; padding: 40px; background-color: #101010; color: #777; }
 
@@ -544,6 +657,9 @@ body[data-theme="dark"], [data-theme="dark"] body {
 
 [data-theme="light"] .callout span {
   color: var(--green);
+  opacity: 1;
+  opacity: 1 !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.38), 0 1px 0 #fff2;
 }
 
 [data-theme="light"] footer {

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Standard robots.txt for static site
+Sitemap: https://aracademi.com/sitemap.xml
+Disallow: /private/
+Sitemap: https://aracademi.com/sitemap.xml
