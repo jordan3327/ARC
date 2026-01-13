@@ -1,3 +1,10 @@
+/* --- Animación de pulso rojo para tarjetas de mentoría --- */
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 10px rgba(255,21,54,0.3); }
+  50% { box-shadow: 0 0 20px rgba(255,21,54,0.5); }
+  100% { box-shadow: 0 0 10px rgba(255,21,54,0.3); }
+}
+
 /* --- Logo de fondo tipo marca de agua --- */
 .background-logo {
   position: fixed;
@@ -676,4 +683,5 @@ body[data-theme="dark"], [data-theme="dark"] body {
 [data-theme="light"] .cookie-card .accept {
   background-color: var(--green);
   color: #fff;
+  animation: pulse-red 1.6s infinite;
 }
