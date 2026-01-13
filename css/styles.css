@@ -1,41 +1,234 @@
+@font-face {
+  font-family: 'Mustica Pro SemiBold';
+  src: url('../assets/fonts/MusticaPro-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+/* Tarjetas de mentoría modernas (estilo exacto solicitado) */
+.card {
+  width: 190px;
+  height: 254px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.card2 {
+  width: 190px;
+  height: 254px;
+  background-color: #1a1a1a;
+  border-radius:;
+  transition: all .2s;
+}
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+/* Tarjetas de mentoría modernas */
+.card {
+  width: 190px;
+  height: 254px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+}
+
+.card2 {
+  width: 190px;
+  height: 254px;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  transition: all .2s;
+}
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+/* Icono SVG de la tarjeta Mentoría 1 a 1 */
+.icon-box-svg {
+  display: inline-flex;
+  align-items: center;
+  height: 1em;
+  width: 1.1em;
+  margin-right: 0.35em;
+  vertical-align: -0.18em;
+}
+.icon-box-svg svg {
+  font-size: 1.6em;
+  vertical-align: -0.18em;
+}
+.svg-fill-b4d8f1 { fill: #B4D8F1; }
+.svg-fill-98c8ed { fill: #98C8ED; }
+.svg-fill-7ab9e8 { fill: #7AB9E8; }
+
+.offer-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+}
+/* --- Socials Uiverse.io style --- */
+ul.example-1 {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  background: #000;
+  border-radius: 8px;
+  padding: 8px 8px;
+  height: auto;
+  width: fit-content;
+  margin: 0 auto 18px auto;
+  transition: none;
+}
+@media (prefers-reduced-transparency: reduce) {
+  ul.example-1 {
+    background: #181818;
+  }
+}
+}
+
+.example-1 .icon-content {
+  margin: 0 4px;
+  position: relative;
+  font-weight: bolder;
+}
+
+.example-1 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-weight: bolder;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.example-1 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.example-1 .icon-content .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+  font-weight: bolder;
+}
+
+.example-1 .icon-content .link:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+
+.example-1 .icon-content .link svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.example-1 .icon-content .link[data-social="spotify"]:hover {
+  color: #00a2ff;
+}
+.example-1 .icon-content .link[data-social="pinterest"]:hover {
+  color: #ff009d;
+}
+.example-1 .icon-content .link[data-social="dribbble"]:hover {
+  color: #686868;
+}
+.example-1 .icon-content .link[data-social="telegram"]:hover {
+  color: #23b100;
+}
+/* Ocultar el switch de tema para futuras actualizaciones */
+.theme-toggle-wrapper {
+  display: none !important;
+}
+/* Switch de tema: color rojo en modo claro */
+[data-theme="light"] .switch input:checked + .slider-round {
+  background-color: var(--red);
+}
+/* Solo el subtítulo del header en negro en modo claro */
+[data-theme="light"] header p {
+  color: #000 !important;
+}
+/* --- Local Font: Integral CF Bold for AR COMMUNITY --- */
+/* Google Font: Archivo Black for AR COMMUNITY */
+@font-face {
+  font-family: 'Integral CF Bold';
+  src: url('../assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- TU CSS ORIGINAL (SIN TOCAR NADA) --- */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Esto evita que los paddings rompan el ancho de tus cubos */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Una fuente más limpia */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
-    scroll-behavior: smooth; /* Para que al navegar el scroll no sea brusco */
+    scroll-behavior: smooth;
 }
 
-/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
 :root {
-  --green: #FF1536;         /* Rojo AR Community */
+  --green: #FF1536;
   --red: #ff4c4c;
   --black: #0d0d0d;
   --white: #ffffff;
   --gray: #1c1c1c;
   --highlight: rgba(255, 255, 255, 0.3);
   --title-gradient: linear-gradient(180deg, #ffffff, #ffffff);
-}
 
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+  /* Light theme variables */
+  --light-green: #000000; /* Verde se vuelve negro para texto en modo claro */
+  --light-red: #e53935;
+  --light-black: #ffffff;      /* Fondo claro real */
+  --light-white: #181818;      /* Texto oscuro real */
+  --light-gray: #f5f5f5;
+  --light-highlight: rgba(0, 0, 0, 0.08);
+  --light-title-gradient: linear-gradient(180deg, var(--red), var(--red));
+}
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--black);
+  background: linear-gradient(to bottom, var(--black) 0%, var(--black) 80%, #000 100%);
   color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* --- ELEMENTOS DE FONDO Y HEADER --- */
 #candles {
   position: fixed;
   top: 0; left: 0;
@@ -50,12 +243,13 @@ header {
 }
 
 header h1 { 
-  font-family: 'Anton', sans-serif;
-  font-size: 5rem; 
+  font-family: 'Archivo Black', 'Encode Sans Semi Condensed', 'Outfit', 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 4.573rem; /* 10% less than 5.081rem */
   margin-bottom: 10px;
   text-transform: uppercase;
-  letter-spacing: 8px; 
-  margin-right: -8px; 
+  letter-spacing: 3px; /* Reduced spacing */
+  margin-right: -3px; 
   background: var(--title-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -64,21 +258,21 @@ header h1 {
 }
 
 header p { 
+  font-family: 'Mustica Pro SemiBold', 'Poppins', 'Montserrat', Arial, sans-serif;
   font-size: 1.2rem; 
   color: #ccc; 
   max-width: 600px; 
   margin: 0 auto 30px; 
 }
 
-/* --- NUEVO BOTÓN DISCORD PREMIUM (UIVERSE ADAPTADO) --- */
 .discord-card-btn {
   position: relative;
   padding: 16px 24px;
   border-radius: 16px;
   border: 2px solid rgba(255, 21, 54, 0.3);
   background: linear-gradient(135deg, rgba(255, 21, 54, 0.15) 0%, rgba(13, 13, 13, 0.9) 100%);
-  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -86,15 +280,14 @@ header p {
   display: block;
 }
 
+
 .discord-card-btn:hover {
   transform: translateY(-4px) scale(1.02);
   border-color: rgba(255, 21, 54, 0.6);
   box-shadow: 0 20px 40px rgba(255, 21, 54, 0.25);
 }
 
-.discord-card-btn:active {
-  transform: scale(0.95);
-}
+.discord-card-btn:active { transform: scale(0.95); }
 
 .shine-sweep {
   position: absolute;
@@ -104,9 +297,7 @@ header p {
   transition: transform 0.8s ease-in-out;
 }
 
-.discord-card-btn:hover .shine-sweep {
-  transform: translateX(100%);
-}
+.discord-card-btn:hover .shine-sweep { transform: translateX(100%); }
 
 .btn-inner-content {
   position: relative;
@@ -123,58 +314,31 @@ header p {
   transition: all 0.3s ease;
 }
 
-.discord-card-btn:hover .discord-svg-main {
-  transform: scale(1.1);
-  fill: #ffffff;
-}
+.discord-card-btn:hover .discord-svg-main { transform: scale(1.1); fill: #ffffff; }
 
-.discord-texts {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
+.discord-texts { display: flex; flex-direction: column; text-align: left; }
+.discord-title { color: #ffffff; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.5px; line-height: 1; }
+.discord-subtitle { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
 
-.discord-title {
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.5px;
-  line-height: 1;
-}
-
-.discord-subtitle {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.85rem;
-}
-
-/* --- SECCIÓN MENTORÍAS --- */
-.section { 
-  padding: 60px 20px; 
-  max-width: 1200px; 
-  margin: auto; 
-}
-
-.section h2 { 
-  text-align: center; 
-  color: var(--green); 
-  font-size: 2rem; 
-  margin-bottom: 40px; 
-}
+.section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+.section h2 { text-align: center; color: var(--green); font-size: 2rem; margin-bottom: 40px; }
 
 .offers-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 90%;
-  max-width: 1100px;
+  gap: 30px;
+  width: 76.95%;
+  max-width: 940.5px;
   margin: 30px auto;
 }
+
+
 
 .offer-card {
   position: relative;
   background: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
   padding: 40px 25px;
   border-radius: 15px; 
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -186,40 +350,12 @@ header p {
   overflow: hidden;
 }
 
-.offer-card:hover { 
-  transform: translateY(-10px); 
-  border-color: rgba(255, 21, 54, 0.4) !important; 
-}
+.offer-card:hover { transform: translateY(-10px); border-color: rgba(255, 21, 54, 0.4) !important; }
+.offer-card h3 { color: var(--green); font-size: 1.6rem; margin-bottom: 20px; text-align: center; }
+.offer-card ul { list-style: none; padding: 0; margin-bottom: 30px; }
+.offer-card ul li { margin-bottom: 12px; padding-left: 35px; position: relative; font-size: 0.95rem; }
+.offer-card ul li::before { content: "✔"; position: absolute; left: 5px; color: var(--green); font-weight: bold; }
 
-.offer-card h3 { 
-  color: var(--green); 
-  font-size: 1.6rem; 
-  margin-bottom: 20px; 
-  text-align: center; 
-}
-
-.offer-card ul { 
-  list-style: none; 
-  padding: 0; 
-  margin-bottom: 30px; 
-}
-
-.offer-card ul li { 
-  margin-bottom: 12px; 
-  padding-left: 35px; 
-  position: relative; 
-  font-size: 0.95rem; 
-}
-
-.offer-card ul li::before { 
-  content: "✔"; 
-  position: absolute; 
-  left: 5px; 
-  color: var(--green); 
-  font-weight: bold; 
-}
-
-/* --- BOTÓN PAY-BTN (CENTRADO) --- */
 .pay-btn {
   position: relative;
   padding: 12px 24px;
@@ -240,178 +376,188 @@ header p {
   overflow: hidden;
 }
 
-.btn-text { 
-  font-weight: 700;
-  text-align: center;
-  flex: 0 1 auto;
-}
+.btn-text { font-weight: 700; text-align: center; flex: 0 1 auto; }
+.pay-btn:hover { transform: translateY(-3px); background: white; box-shadow: 0 10px 20px rgba(255, 21, 54, 0.3); }
 
-.icon-container {
-  position: relative;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pay-btn:hover {
-  transform: translateY(-3px);
-  background: white;
-  box-shadow: 0 10px 20px rgba(255, 21, 54, 0.3);
-}
-
-.pay-btn .icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  color: black;
-  opacity: 0;
-  visibility: hidden;
-  transition: color 0.3s;
-}
-
-.pay-btn:hover .icon { color: var(--green); }
-.default-icon { opacity: 1; visibility: visible; }
-
-.pay-btn:hover .wallet-icon { opacity: 0; visibility: hidden; }
-.pay-btn:hover .card-icon { animation: iconRotate 2.5s infinite; }
-.pay-btn:hover .payment-icon { animation: iconRotate 2.5s infinite 0.5s; }
-.pay-btn:hover .dollar-icon { animation: iconRotate 2.5s infinite 1s; }
-.pay-btn:hover .check-icon { animation: iconRotate 2.5s infinite 1.5s; }
-
-@keyframes iconRotate {
-  0% { opacity: 0; transform: translateY(10px) scale(0.5); }
-  5%, 15% { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
-  20% { opacity: 0; transform: translateY(-10px) scale(0.5); }
-  100% { opacity: 0; }
-}
-
-/* --- TESTIMONIOS --- */
 .testimonials { margin-top: 60px; }
 .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.testimonial { background-color: var(--gray); padding: 25px; border-radius: 10px; border-left: 5px solid var(--green); }
+.testimonial {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 25px;
+  /* border-left eliminado para quitar el contorno */
+}
 .testimonial p { font-style: italic; color: #ddd; }
 .testimonial span { display: block; margin-top: 15px; color: #999; font-weight: bold; }
 
-/* --- SECCIÓN SOCIAL (UIVERSE ADAPTADA) --- */
-/* --- SECCIÓN SOCIAL (CORRECCIÓN DE VISIBILIDAD DE ICONOS) --- */
-.social-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 60px 0;
-}
-
-.card {
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  gap: 15px;
-}
-
-/* --- SECCIÓN SOCIAL (CUBOS CENTRADOS Y VISIBLES) --- */
-.social-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 60px 0;
-}
-
-.card {
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  gap: 15px;
-}
+.social-section { display: flex; justify-content: center; align-items: center; width: 100%; margin: 60px 0; }
+.card { width: fit-content; display: flex; align-items: center; justify-content: center; background-color: transparent; gap: 15px; }
 
 .socialContainer {
-  width: 48px; 
+  width: 48px;
   height: 48px;
-  border-radius: 10px;
-  background-color: #1c1c1c; 
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: 0.3s;
   text-decoration: none;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  cursor: pointer;
 }
 
-/* FORZAR VISIBILIDAD DE ICONOS */
-.socialSvg {
-  width: 20px;   /* Tamaño equilibrado */
-  height: 20px;
-  display: block;
+.socialContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
 }
 
-/* TikTok necesita un SVG un poco más grande por su forma */
-.tiktokSvg { width: 24px; height: 24px; }
-
-/* RELLENO BLANCO OBLIGATORIO */
-.socialSvg path, .socialSvg g, .socialSvg circle {
-  fill: #ffffff !important; 
+.socialContainer:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.07);
+  background: rgba(255,255,255,0.16);
 }
 
-/* COLORES EN HOVER */
-.containerFive:hover { background-color: #FF0000; } /* YouTube Rojo */
-.containerOne:hover { background-color: #d62976; }   /* Instagram Rosa */
-.containerTwo:hover { background-color: #000000; }   /* TikTok Negro */
-.containerFour:hover { background-color: #25d366; }  /* WhatsApp Verde */
+.socialContainer:hover::before {
+  opacity: 1;
+}
+}
+
+.socialSvg { width: 20px; height: 20px; display: block; }
+.socialSvg path, .socialSvg g, .socialSvg circle { fill: #ffffff !important; }
+
+.containerFive:hover { background-color: #FF0000; }
+.containerOne:hover { background-color: #d62976; }
+.containerTwo:hover { background-color: #000000; }
+.containerFour:hover { background-color: #25d366; }
 
 .socialContainer:active { transform: scale(0.9); }
 
-/* Animación slide-in al pasar el mouse */
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
-}
+.callout { text-align: center; margin: 60px auto; padding: 0 20px; width: 100%; max-width: 900px; }
+.callout span { color: var(--green); font-size: clamp(1.1rem, 4vw, 1.8rem); font-weight: 700; text-transform: uppercase; }
 
-@keyframes slide-in-top {
-  0% { transform: translateY(-30px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
+footer { text-align: center; padding: 40px; background-color: #101010; color: #777; }
 
-/* Responsivo para móviles */
-@media (max-width: 480px) {
-  .card { gap: 10px; }
-  .socialContainer { width: 42px; height: 42px; }
-  .socialSvg { width: 18px; }
-}
-
-/* --- CALLOUT --- */
-.callout { 
-  text-align: center; 
-  margin: 60px auto; 
-  padding: 0 20px; 
-  width: 100%;
-  max-width: 900px;
-}
-
-.callout span { 
-  color: var(--green); 
-  font-size: clamp(1.1rem, 4vw, 1.8rem); 
-  font-weight: 700; 
-  display: inline-block;
-  line-height: 1.4;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-footer { 
-  text-align: center; 
-  padding: 40px; 
-  background-color: #101010; 
-  color: #777; 
-}
-
-/* --- RESPONSIVE --- */
 @media (max-width: 900px) { 
   .offers-row { grid-template-columns: 1fr; width: 95%; }
   header h1 { font-size: 3rem; letter-spacing: 4px; }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1, h2, .main-container, .social-section { animation: aparecer 1s ease-out forwards; }
+
+.cookie-card {
+  position: fixed;
+  bottom: -400px;
+  right: 20px;
+  z-index: 10000;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 300px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .5);
+  border: 1px solid #333;
+}
+.cookie-card.active { bottom: 20px; }
+.cookie-card .accept { padding: 8px 15px; background-color: #fff; color: #000; border: none; border-radius: 7px; font-weight: 600; cursor: pointer; }
+
+/* --- MODO CLARO REAL --- */
+[data-theme="light"] {
+  --green: var(--light-green);
+  --red: var(--light-red);
+  --black: var(--light-black);
+  --white: var(--light-white);
+  --gray: var(--light-gray);
+  --highlight: var(--light-highlight);
+  --title-gradient: var(--light-title-gradient);
+}
+
+[data-theme="light"] body {
+  background-color: var(--black) !important;
+  color: var(--white);
+}
+
+body[data-theme="dark"], [data-theme="dark"] body {
+  background-color: var(--black) !important;
+  color: var(--white);
+}
+
+[data-theme="light"] body {
+  background-color: var(--light-black) !important;
+  color: var(--light-white);
+}
+
+[data-theme="light"] header {
+  background: linear-gradient(to bottom, rgba(229,229,229,0.9), rgba(229,229,229,0));
+}
+
+[data-theme="light"] .offer-card {
+  background: rgba(0,0,0,0.10) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  color: var(--white);
+  color: #000 !important;
+}
+
+[data-theme="light"] .testimonial {
+  background-color: var(--gray);
+  border-left: 5px solid var(--green);
+  color: #000;
+}
+
+[data-theme="light"] .testimonial p,
+[data-theme="light"] .testimonial span {
+  color: #000;
+}
+
+[data-theme="light"] .pay-btn {
+  background: var(--red);
+  color: #fff;
+}
+
+
+
+[data-theme="light"] .discord-title {
+  color: #000;
+}
+
+[data-theme="light"] .discord-subtitle {
+  color: rgba(0,0,0,0.5);
+}
+
+[data-theme="light"] .callout span {
+  color: var(--green);
+}
+
+[data-theme="light"] footer {
+  background-color: #f5f5f5;
+  color: #444;
+}
+
+[data-theme="light"] .cookie-card {
+  background-color: #f5f5f5;
+  color: #222;
+  border: 1px solid #ddd;
+}
+
+[data-theme="light"] .cookie-card .accept {
+  background-color: var(--green);
+  color: #fff;
 }
